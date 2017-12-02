@@ -5,9 +5,6 @@
   "hexo": {
     "version": "3.4.2"
   },
-  "scripts": {
-    "postinstall": "cd themes/tranquilpeak && NODE_ENV=development npm install && npm install grunt-cli -g && npm install bower -g && bower install && grunt buildProd && cd .."
-    },
   "dependencies": {
     "hexo": "^3.2.0",
     "hexo-deployer-git": "^0.3.1",
