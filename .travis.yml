@@ -1,0 +1,34 @@
+language: node_js
+node_js:
+- 8.9.1
+sudo: false
+before_install:
+- npm install hexo-cli -g
+install:
+- npm install
+branches:
+  only:
+  - master
+before_script:
+- git config --global user.name 'anbuchelva'
+- git config --global user.email 'anbuchelva@gmail.com'
+- sed -i'' "s~git@github.com:anbuchelva/blog.git~https://${GH_TOKEN}:x-oauth-basic@github.com/anbuchelva/blog.git~"
+  _config.yml
+script:
+- git submodule init
+- git submodule update
+- cd themes/tranquilpeak
+- NODE_ENV=development npm install
+- npm install grunt-cli -g
+- npm install bower -g
+- bower install
+- grunt buildProd
+- cd ..
+- hexo clean
+- hexo algolia
+- hexo generate
+- hexo deploy
+- echo "deployment successful!!"
+env:
+  global:
+    secure: WeSqGusWARxUxorE3ybTkAccjZj94hCCbz9GphVYmP5RtLeX7mXZ+cCgpauuzJBAKg6qvG19PFAppeo2Z84bQn9Oo9Ob29oAaksEK1b7RhOEOxuw2Vk9EhTck/85wF9BhJKg1PGGa+LG7Q5Q+7FAQi05Gw+D/5sbd5kcSDDUUhKi2z85vMImw49y1JmhCyWlR5HsUnGOZqCEh+ZypdAMwU9smKQeKPzjUuPpjsaOT1M2z6MdrLYQDEqqR5/SKbYEMDfd3obpNuCic+hrxd10jjZn+xYmyOqwjlUwgmjsu3vwSEnnCb0btM7urXZUwryDpsX45aHPigxKuRbL2AkkEIHAyiC8KYjpO/LctQJ9vM5d0CHhUgM0qSCNKkBHvH5ILWeHWQqTH7CV0h/TtAjQPlx9u8Z6d6Ak1IX9Y1CyMcfW4Iu5IPTrMOoKsoSawpAvuh4ahglNWisRv4i/zUGtlw3k2M9fQ7U3eURwSBM5lYH452kxoHV69NLmvADPOW0VevhT+Q+Mp2yhoV3CzG3moSCMDptGTYESR54KivS/qGWs8+Y5Gi4EBuS5RNc0/8pLvPe24YcVctEXZ2NHKqA+jmnAJub1n2/bPMWmfNOdYUcYGfkhE0VuvJo1crC6ygLSoOVpfU0KMZ/AvpTrvJyCUefCJR0u7C5cElQD7jDSXAU=
