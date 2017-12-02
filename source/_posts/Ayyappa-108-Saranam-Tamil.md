@@ -10,6 +10,7 @@ tags:
   - சரணம் ஐயப்பா
 categories:
   - tamil
+thumbnailImage: ayyappan_img.jpg
 ---
 
 ##  ஓம் சுவாமியே சரணம் ஐயப்பா!!
