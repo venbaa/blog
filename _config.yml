@@ -110,3 +110,13 @@ keywords:
   - tamil
   - chennai
 
+sitemap:
+    path: sitemap.xml
+
+robotstxt:
+  useragent: "*"
+  disallow:
+    - /#about
+#  allow:
+#    - /one_file_to_allow.html
+  sitemap: /sitemap.xml
