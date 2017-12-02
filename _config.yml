@@ -76,7 +76,7 @@ pagination_dir: page
 algolia:
   appId: "N55Q2GSOD2"
   apiKey: "3f93f6775cb09c99c9ad19a3040f3cf2"
-#  adminApiKey: "5717c7867b980812080dee97d090704e"
+  adminApiKey: ALGOLIA_ADMIN_API_KEY
   chunkSize: 5000
   indexName: "blog"
   fields:
