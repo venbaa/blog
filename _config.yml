@@ -74,9 +74,9 @@ pagination_dir: page
 #plugins:
 #  - hexo-algoliasearch
 algolia:
-  appId: "N55Q2GSOD2"
-  apiKey: "3f93f6775cb09c99c9ad19a3040f3cf2"
-  adminApiKey: ALGOLIA_ADMIN_API_KEY
+  appId: "D79H6MMEPR"
+  apiKey: "04ec86da42ccbc3370299a22c4fbeb24"
+  adminApiKey: ${ALGOLIA_ADMIN_API_KEY}
   chunkSize: 5000
   indexName: "blog"
   fields:
