@@ -1,4 +1,10 @@
+[script-start]
+  base = "."
+  command = "chmod +x script.sh"
+[script-run]
+  base = "."
+  command = "./script.sh"
 [build]
   base = "."
-  command = "chmox +x script.sh" && "./script.sh" && "hexo generate"
+  command = "hexo generate"
   publish = "/public"
