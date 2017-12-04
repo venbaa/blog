@@ -1,15 +1,14 @@
 [build]
   base = "."
-  command = git submodule init
-  command = git submodule update
-  command = cd themes/tranquilpeak && NODE_ENV=development npm install
-  command = cd themes/tranquilpeak && npm install grunt-cli -g
-  command = cd themes/tranquilpeak && npm install bower -g
-  command = cd themes/tranquilpeak && bower install
-  command = cd themes/tranquilpeak && grunt buildProd
-  command = hexo clean
-  command = hexo algolia
-  command = hexo generate
-  command = hexo deploy
+  command = "git submodule init"
+  command = "git submodule update"
+  command = "cd themes/tranquilpeak && NODE_ENV=development npm install"
+  command = "cd themes/tranquilpeak && npm install grunt-cli -g"
+  command = "cd themes/tranquilpeak && npm install bower -g"
+  command = "cd themes/tranquilpeak && bower install"
+  command = "cd themes/tranquilpeak && grunt buildProd"
+  command = "hexo clean"
+  command = "hexo algolia"
   command = "hexo generate"
+  command = "hexo deploy"
   publish = "/public"
